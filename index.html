@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konten Grafik / Materi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sidebar img {
+            width: 100%;
+            height: auto;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .tabs {
+            margin-top: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            border: none;
+            margin-right: 5px;
+        }
+
+        .tab-button.active {
+            background-color: #bbb;
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        img.grafik {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="https://upload.wikimedia.org/wikipedia/id/f/fd/Gedung_gunadarma.jpg" alt="Gedung Gunadarma">
+        <div class="info">
+            <p><strong>Nama:</strong></p>
+            <ol>
+                <li>Nadya Ramadhanti (11122043)</li>
+                <li>Fatikah Indah Puspa</li>
+                <li>Zhafira</li>
+            </ol>
+            <p><strong>Kelas:</strong> 3KA22</p>
+            <p><strong>Mata Kuliah:</strong><br> Pemodelan dan Visualisasi Data</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>KONTEN GRAFIK / MATERI</h2>
+        <p>Di bagian ini Anda bisa menampilkan grafik, visualisasi data, atau konten tugas lainnya.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('grafik1')">GRAFIK 1</button>
+            <button class="tab-button" onclick="openTab('grafik2')">GRAFIK 2</button>
+            <button class="tab-button" onclick="openTab('grafik3')">GRAFIK 3</button>
+        </div>
+
+        <div id="grafik1" class="tab-content active">
+            <h3>Grafik Diagram Batang</h3>
+            <img src="images/grafik1.png" alt="Grafik Batang" class="grafik">
+        </div>
+
+        <div id="grafik2" class="tab-content">
+            <h3>Grafik Pie Chart</h3>
+            <img src="images/grafik2.png" alt="Grafik Pie" class="grafik">
+        </div>
+
+        <div id="grafik3" class="tab-content">
+            <h3>Grafik Line</h3>
+            <img src="images/grafik3.png" alt="Grafik Line" class="grafik">
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(tabId) {
+        var tabs = document.getElementsByClassName('tab-content');
+        var buttons = document.getElementsByClassName('tab-button');
+
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+            buttons[i].classList.remove('active');
+        }
+
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
